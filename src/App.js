@@ -1,19 +1,24 @@
-import logo from './logo.svg'
+import { useState } from 'react'
 import './App.css'
+import style from './style.module.css'
+import { Header } from './Header/Header'
+import { Main } from './Main/Main'
 
 function App() {
+  const [selectedFile, setSelectedFile] = useState(null)
+
+  if (selectedFile) {
+    return (
+      <div className={style.mainPage}>
+        <Header setSelectedFile={setSelectedFile} />
+        <Main selectedFile={selectedFile} />
+      </div>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-      </header>
+    <div className={style.donloadOnlyPage}>
+      <Header setSelectedFile={setSelectedFile} />
     </div>
   )
 }

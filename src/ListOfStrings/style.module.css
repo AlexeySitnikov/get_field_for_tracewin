@@ -1,0 +1,14 @@
+.deleteButton{
+  color: red;
+  margin-right: 12px;
+}
+
+.textStyle{
+  font-weight:600;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.marked{
+  background-color: brown;
+}
