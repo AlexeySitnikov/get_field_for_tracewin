@@ -5,20 +5,20 @@ import { Header } from './Header/Header'
 import { Main } from './Main/Main'
 
 function App() {
-  const [selectedFile, setSelectedFile] = useState(null)
+  const [selectedFiles, setSelectedFiles] = useState(null)
 
-  if (selectedFile) {
+  if (selectedFiles) {
     return (
       <div className={style.mainPage}>
-        <Header setSelectedFile={setSelectedFile} />
-        <Main selectedFile={selectedFile} />
+        <Header setSelectedFiles={setSelectedFiles} />
+        <Main selectedFiles={selectedFiles} />
       </div>
     )
   }
 
   return (
     <div className={style.donloadOnlyPage}>
-      <Header setSelectedFile={setSelectedFile} />
+      <Header setSelectedFiles={setSelectedFiles} />
     </div>
   )
 }

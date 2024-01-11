@@ -1,4 +1,5 @@
-export function Download(data, filename) {
+/* eslint-disable camelcase */
+export function Download_Ey(data, filename) {
   const file = new Blob((data), { type: 'text/plain' })
   const a = document.createElement('a')
   const url = URL.createObjectURL(file)
@@ -9,5 +10,5 @@ export function Download(data, filename) {
   setTimeout(() => {
     document.body.removeChild(a)
     window.URL.revokeObjectURL(url)
-  }, 0)
+  }, 300)
 }

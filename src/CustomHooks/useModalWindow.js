@@ -5,7 +5,6 @@ import { useState } from 'react'
 export const useModalWindow = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [content, setContent] = useState(null)
-  // console.log(arrayOfStrings)
 
   const closeModalClickHandler = () => {
     setIsModalOpen(false)

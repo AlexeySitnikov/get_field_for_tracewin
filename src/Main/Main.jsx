@@ -1,26 +1,34 @@
+import { useEffect } from 'react'
 import { useModalWindow } from '../CustomHooks/useModalWindow'
 import { useRows } from '../CustomHooks/useRows'
 // import { SingleRow } from '../ListOfStrings/SingleRow'
 import { Modal } from '../Modal/Modal'
 import style from './style.module.css'
 
-export function Main({ selectedFile }) {
+export function Main({ selectedFiles }) {
   const {
-    arrayOfStrings,
-    onClickUndoButton,
-    // deleteString,
-    getUndoSteps,
-  } = useRows({ selectedFile })
+    Ex,
+    Ey,
+    Ez,
+  } = useRows({ selectedFiles })
 
   const {
     isModalOpen, content, closeModalClickHandler, openModalClickHandler,
-  } = useModalWindow({ arrayOfStrings })
+  } = useModalWindow({
+    Ex,
+    Ey,
+    Ez,
+  })
 
-  const keyPress = (e) => {
-    if (e.keyCode === 90 && e.ctrlKey && getUndoSteps()) { onClickUndoButton() }
-  }
+  useEffect(() => {
+    console.log(Ex)
+  }, [Ex])
 
-  document.onkeydown = keyPress
+  // const keyPress = (e) => {
+  //   if (e.keyCode === 90 && e.ctrlKey && getUndoSteps()) { onClickUndoButton() }
+  // }
+
+  // document.onkeydown = keyPress
   // console.log(arrayOfStrings)
 
   return (
@@ -29,7 +37,7 @@ export function Main({ selectedFile }) {
         {content}
       </Modal>
 
-      <div className={style.undoButtonStyle}>
+      {/* <div className={style.undoButtonStyle}>
         <button
           className={`${(getUndoSteps() === 0) ? style.buttonDisabled : style.button}`}
           type="button"
@@ -40,7 +48,7 @@ export function Main({ selectedFile }) {
           {' '}
           {getUndoSteps() === 0 ? '' : getUndoSteps()}
         </button>
-      </div>
+      </div> */}
 
       <div className={style.callModalWindowsStyle}>
         <button className={style.button} type="button" onClick={openModalClickHandler} id="CST">
