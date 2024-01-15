@@ -21,34 +21,14 @@ export function Main({ selectedFiles }) {
   })
 
   useEffect(() => {
-    console.log(Ex)
+    // console.log(Ex)
   }, [Ex])
-
-  // const keyPress = (e) => {
-  //   if (e.keyCode === 90 && e.ctrlKey && getUndoSteps()) { onClickUndoButton() }
-  // }
-
-  // document.onkeydown = keyPress
-  // console.log(arrayOfStrings)
 
   return (
     <div className={style.mainPage}>
       <Modal isOpen={isModalOpen} closeModal={closeModalClickHandler}>
         {content}
       </Modal>
-
-      {/* <div className={style.undoButtonStyle}>
-        <button
-          className={`${(getUndoSteps() === 0) ? style.buttonDisabled : style.button}`}
-          type="button"
-          onClick={onClickUndoButton}
-          disabled={getUndoSteps() === 0}
-        >
-          Undo deleted string
-          {' '}
-          {getUndoSteps() === 0 ? '' : getUndoSteps()}
-        </button>
-      </div> */}
 
       <div className={style.callModalWindowsStyle}>
         <button className={style.button} type="button" onClick={openModalClickHandler} id="CST">
@@ -60,11 +40,11 @@ export function Main({ selectedFiles }) {
       </div>
 
       {/* <div className={style.rows}>
-        {arrayOfStrings.map((row) => (
+        {Ex.map((row) => (
           <SingleRow
             key={crypto.randomUUID()}
             row={row}
-            deleteString={deleteString}
+            // deleteString={deleteString}
           />
         ))}
       </div> */}
