@@ -10,6 +10,8 @@ export function Main({ selectedFiles }) {
     Ex,
     Ey,
     Ez,
+    // lines,
+    // data,
   } = useRows({ selectedFiles })
 
   const {
@@ -21,8 +23,8 @@ export function Main({ selectedFiles }) {
   })
 
   useEffect(() => {
-    // console.log(Ex)
-  }, [Ex])
+    console.log(Ex)
+  }, [JSON.stringify(Ex)])
 
   return (
     <div className={style.mainPage}>
