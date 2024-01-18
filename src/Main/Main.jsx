@@ -4,14 +4,14 @@ import { useRows } from '../CustomHooks/useRows'
 // import { SingleRow } from '../ListOfStrings/SingleRow'
 import { Modal } from '../Modal/Modal'
 import style from './style.module.css'
+// eslint-disable-next-line camelcase
+import { Download_Ex } from '../Dowload/Download_Ex'
 
 export function Main({ selectedFiles }) {
   const {
     Ex,
     Ey,
     Ez,
-    // lines,
-    // data,
   } = useRows({ selectedFiles })
 
   const {
@@ -23,8 +23,11 @@ export function Main({ selectedFiles }) {
   })
 
   useEffect(() => {
-    console.log(Ex)
-  }, [JSON.stringify(Ex)])
+    if (Ex.id) {
+      Download_Ex(Ex.fullX, 'Ex.txt')
+    }
+    console.log(Ex.fullX)
+  }, [Ex.id])
 
   return (
     <div className={style.mainPage}>
