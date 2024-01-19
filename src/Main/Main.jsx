@@ -5,7 +5,7 @@ import { useRows } from '../CustomHooks/useRows'
 import { Modal } from '../Modal/Modal'
 import style from './style.module.css'
 // eslint-disable-next-line camelcase
-import { Download_Ex } from '../Dowload/Download_Ex'
+// import { Download_Ex } from '../Dowload/Download_Ex'
 
 export function Main({ selectedFiles }) {
   const {
@@ -24,9 +24,9 @@ export function Main({ selectedFiles }) {
 
   useEffect(() => {
     if (Ex.id) {
-      Download_Ex(Ex.fullX, 'Ex.txt')
+      // Download_Ex(Ex.fullX, 'Ex.txt')
     }
-    console.log(Ex.fullX)
+    // console.log(Ex.fullX)
   }, [Ex.id])
 
   return (
